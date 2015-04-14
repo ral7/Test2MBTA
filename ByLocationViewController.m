@@ -100,8 +100,8 @@
     CLLocationCoordinate2D annotationCoord;
     float latFloat = [@"42.338503" floatValue];
     float longFloat = [@"-71.092492" floatValue];
-//    self.currentLat = @"42.338503";
-//    self.currentLong = @"-71.092492";
+    self.currentLat = @"42.338503";
+    self.currentLong = @"-71.092492";
     
     
     
@@ -155,8 +155,6 @@
     
     NSString *stopApiString = [NSString stringWithFormat:@"http://realtime.mbta.com/developer/api/v2/stopsbylocation?api_key=hL9CTWmmz06o80Vv8cYuJw&lat=%@&lon=%@&format=xml",self.currentLat, self.currentLong];
     NSURL *URL = [[NSURL alloc] initWithString:stopApiString];
-     //NSString *xmlString = [[NSString alloc] initWithContentsOfURL:URL encoding:NSUTF8StringEncoding error:NULL];
-     //NSLog(@"STring is: %@", xmlString);
     NSData *data = [[NSData alloc]initWithContentsOfURL:URL];
     xmlContentFlag = @"Stops";
     NSXMLParser *parser = [[NSXMLParser alloc]initWithData:data];
@@ -206,8 +204,6 @@
     NSString *predictAPIString = [NSString stringWithFormat:@"http://realtime.mbta.com/developer/api/v2/predictionsbystop?api_key=wX9NwuHnZU2ToO7GmGR9uw&stop=%@&format=xml",stopid];
     NSLog(@"%@",predictAPIString);
     NSURL *URL = [[NSURL alloc]initWithString:predictAPIString];
-    //NSString *out1 = [[NSString alloc] initWithContentsOfURL:URL encoding:NSUTF8StringEncoding error:NULL];
-        //NSLog(@"%@", out1);
     xmlContentFlag = @"Buses";
     NSData *data = [[NSData alloc]initWithContentsOfURL:URL];
     NSXMLParser *parser = [[NSXMLParser alloc]initWithData:data];
